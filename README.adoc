@@ -1,2 +1,2 @@
 # CDP Public Cloud: Hands On Labs Infrastructure Provisioner
-# Author: Puneet Joshi
+Author: Puneet Joshi
