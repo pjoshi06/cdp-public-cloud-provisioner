@@ -1,3 +1,7 @@
 ## CDP Public Cloud: Hands On Labs Infrastructure Provisioner
 
 Author: **Puneet Joshi**
+
+## Overview
+
+Hands-on Labs play a crucial role in showcasing the capabilities of Cloudera Data Platform public cloud form factor to partners and customers. They offer a practical and immersive learning experience that goes beyond mere overview. Hands-on Labs facilitate participant engagement and allow them to explore and interact with different PaaS offerings of Cloudera Data Platform.
