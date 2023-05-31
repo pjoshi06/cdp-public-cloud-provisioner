@@ -5,3 +5,7 @@ Author: **Puneet Joshi**
 ## Overview
 
 Hands-on Labs play a crucial role in showcasing the capabilities of Cloudera Data Platform public cloud form factor to partners and customers. They offer a practical and immersive learning experience that goes beyond mere overview. Hands-on Labs facilitate participant engagement and allow them to explore and interact with different PaaS offerings of Cloudera Data Platform.
+Infrastructure components are important and play a vital role in acheieving the goal of Hands-on Labs and to give a better experience to participants.
+
+**Hands On Labs Infrastructure Provisioner** is a container based solution which takes care of provisioning the required infrastaructure components without much manual efforts. It takes care of creating a **disposable** stack consists of CDP Environment, Keycloak Server & Users by executing **single** command. It also takes care of terminating the complete stack & resource cleanup.
+
