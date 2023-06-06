@@ -27,3 +27,9 @@ Infrastructure components are important and play a vital role in acheieving the 
 All the above tools are integrated with each other and packaged as a Dokcer Container for use.
 
 ## Prerequisites:
+The ready to use container takes care of all the dependencies of required tools & does not require user to install or configure any of the above listed tools. 
+For using this user should have:
+
+1. Docker.
+2. Programatic Access(CDP_ACCESS_KEY_ID & CDP_PRIVATE_KEY) of CDP Tenant
+3. Programatic Access(AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY) of the AWS account with Administrator or Power User Role
