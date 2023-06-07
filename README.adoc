@@ -208,12 +208,10 @@ provision
 
 For Windows Users:
 ----
-----
 docker run -it \
 -v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
 pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
 provision
 
-----
 ----
 ---
