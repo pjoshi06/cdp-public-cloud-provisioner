@@ -189,5 +189,5 @@ values of the parameters.
 
 |===
 ==== D):
-Place the **AWS_KEY_PAIR.pem** downloaded in Step  file userconfig folder created in previous step.
+Place the **AWS_KEY_PAIR.pem** file downloaded in **Step 2** inside userconfig folder created in previous step.
 ---
