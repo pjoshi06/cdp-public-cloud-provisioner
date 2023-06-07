@@ -36,3 +36,11 @@ For using this user should have:
 1. Docker.
 2. Programatic Access(CDP_ACCESS_KEY_ID & CDP_PRIVATE_KEY) of CDP Tenant
 3. Programatic Access(AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY) of the AWS account with Administrator or Power User Role
+
+## How To Use:
+The docker image is available at Docker Hub. Once the Docker is installed and ready to use pull the **cdp-public-cloud-hol-provisioner:1.1** image by executing below command.
+
+[.shell]
+---
+docker pull pjoshi06/cdp-public-cloud-hol-provisioner:1.1
+---
