@@ -129,6 +129,8 @@ C:\Users\Puneet Joshi\userconfig
 
 ----
 
+==== B): Download the attached **configfile** and place it inside the above created directory. Make sure you dont add any file extension to it. (.txt,.doc).
 
+==== C): Start editing the **configfile** with the help of editior of your choice. Don't add any 'new line' after the last entry in the file.
 
 ---
