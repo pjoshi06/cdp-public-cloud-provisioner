@@ -112,7 +112,8 @@ docker pull pjoshi06/cdp-public-cloud-hol-provisioner:1.1
 This docker based provisioner requires values of mandatory parameters to provision the infrastructure. It reads the values of these parameters from a configuration file hosted on your local machine. This section walks you through all the steps which are required to create a configuration file. This is the most **important** part so please dont skip any
 step of this section.
 
-==== A): Create a folder inside your user home directory on your local machine by name **userconfig**. This folder will store all the configuration file and output generated in
+==== A): 
+Create a folder inside your user home directory on your local machine by name **userconfig**. This folder will store all the configuration file and output generated in
 further steps.
 Mac Users:
 
@@ -129,8 +130,11 @@ C:\Users\Puneet Joshi\userconfig
 
 ----
 
-==== B): Download the attached **configfile** and place it inside the above created directory. Make sure you dont add any file extension to it. (.txt,.doc).
+==== B): 
+Download the  **configuration/configfile** and place it inside the above created directory. Make sure you dont add any file extension to it. (.txt,.doc).
 
-==== C): Start editing the **configfile** with the help of editior of your choice. Don't add any 'new line' after the last entry in the file.
+==== C): 
+Start editing the **configfile** with the help of editor of your choice. Don't add any 'new line' after the last entry in the file. Refer to below table for defining
+values of the parameters.
 
 ---
