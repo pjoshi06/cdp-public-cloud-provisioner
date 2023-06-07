@@ -244,8 +244,10 @@ image::images/during_process.png[during_process,650,300]
 
 === The Outcome:
 The succesful execution of Step 5 will generate a .txt file in 'userconfig' folder on your local machine. The name of the file will be <VALUE_OF_WORKSHOP_NAME>.txt
-e.g : If in the configfile the value of WORKSHOP_NAME is **ibmwrkshop** the out put file will be **ibmwrkshop.txt**
+e.g : If in the configfile the value of WORKSHOP_NAME is **accn-wrkshp** the out put file will be **accn-wrkshp.txt**
 
-This file contains details about the provisioned Keycloak Server and the SSO URL which will be used for participants for login.
+This file contains details about the provisioned Keycloak Server and the SSO URL which will be used for participants for login. It will look similar like below
+
+image::images/out_put_kc.png[during_process,650,300]
 
 ---
