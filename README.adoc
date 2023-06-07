@@ -192,3 +192,6 @@ values of the parameters.
 Place the **AWS_KEY_PAIR.pem** file downloaded in **Step 2** inside userconfig folder created in previous step.
 
 ---
+=== Step 5: Start Provisioning Stack:
+
+---
