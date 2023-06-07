@@ -207,6 +207,7 @@ provision
 ----
 
 **For Windows Users:**
+[.shell]
 ----
 docker run -it \
 -v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
@@ -238,6 +239,6 @@ docker logs <CONTINER_ID> OR <CONTAINER_NAME>
 The overall time for provisioning is nearly 30-35 minutes. During the execution either on terminal or in docker logs you will find below message appearing frequently.
 This is expected as some processes are running in asychronous mode. You can safely ignore the messages.
 
-image::images/during_process.png
-
+image::images/during_process.png[during_process,650,300]
 ---
+
