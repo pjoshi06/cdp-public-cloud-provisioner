@@ -243,11 +243,79 @@ image::images/during_process.png[during_process,650,300]
 ---
 
 === The Outcome:
+==== Keycloak:
 The succesful execution of Step 5 will generate a .txt file in 'userconfig' folder on your local machine. The name of the file will be <VALUE_OF_WORKSHOP_NAME>.txt
 e.g : If in the configfile the value of WORKSHOP_NAME is **accn-wrkshp** the out put file will be **accn-wrkshp.txt**
 
 This file contains details about the provisioned Keycloak Server and the SSO URL which will be used for participants for login. It will look similar like below
 
 image::images/out_put_kc.png[during_process,650,300]
+
+==== CDP:
+[%header,cols="1,1"]
+|===
+|Type
+|Name
+
+
+|Environment
+|<WORKSHOP_NAME>-cdp-env; e.g : accn-workshp-cdp-env
+
+|Admin User Group
+|<WORKSHOP_NAME>-cdp-admin-group; e.g: accn-workshp-cdp-admin-group
+
+|User Group
+|<WORKSHOP_NAME>-cdp-user-group; e.g: accn-workshp-cdp-user-group
+
+|===
+The provisioned CDP environment will have all the Keycloak users created in CDP and assigned to the *-cdp-user-group and synched to FreeIpa.
+
+[NOTE]
+During provisioning the process creates files and hidden folder inside the local userconfig folder. Do not delete any
+files and folder as these are required for destroying the stack.
+---
+=== Destroy:
+After succesful delivery of your HOL/Workshop the complete stack can be destroyed using one single command as below.
+
+**For Mac Users:**
+
+[.shell]
+----
+docker run -it \
+-v <LOCAL_PATH_OF_CONFIG_FOLDER>:/userconfig \
+pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+destroy
+
+----
+
+**For Windows Users:**
+[.shell]
+----
+docker run -it \
+-v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
+pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+destroy
+
+----
+
+[NOTE]
+The above commands will start the docker container in interactive mode and will display the process output
+and messages on the terminal. Make sure you don't close the terminal or
+your machine does not go to into sleep mode because of inactivity. 
+If you wan to run the container in background/detach mode then replace the '-it' flag in above commands
+with '-d'(without quotes). You can check the logs of container by below commands
+
+To get the container ID or Name:
+[.shell]
+----
+docker ps
+
+----
+To get the logs:
+[.shell]
+----
+docker logs <CONTINER_ID> OR <CONTAINER_NAME>
+
+----
 
 ---
