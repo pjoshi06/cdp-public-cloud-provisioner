@@ -273,7 +273,9 @@ The provisioned CDP environment will have all the Keycloak users created in CDP 
 [NOTE]
 During provisioning the process creates files and hidden folder inside the local userconfig folder. Do not delete any
 files and folder as these are required for destroying the stack.
+
 ---
+
 === Destroy:
 After succesful delivery of your HOL/Workshop the complete stack can be destroyed using one single command as below.
 
