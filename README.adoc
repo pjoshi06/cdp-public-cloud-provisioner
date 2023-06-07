@@ -74,8 +74,29 @@ Secret access key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
 To download the key pair, choose Download .csv file. Store the .csv file with keys in a secure location.
 
+---
+
 === Step 2: AWS SSH Key Pair
-==== Step 3: Get the docker image.
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+2. In the navigation pane, under Network & Security, choose Key Pairs.
+
+3. Choose Create key pair.
+
+4. For Name, enter a descriptive name for the key pair. It can’t include leading or trailing spaces.
+
+5. For Key pair type, choose either RSA.
+
+6. For Private key file format, choose the pem format.
+
+7. To add a tag to the public key, choose Add tag, and enter the key and value for the tag. Repeat for each tag.
+
+8. Choose Create key pair.
+
+The private key file is automatically downloaded by your browser. The base file name is the name that you specified as the name of your key pair, and the file name extension is determined by the file format that you chose. Save the private key file in a safe place.
+
+---
+=== Step 3: Get the docker image.
 The docker image is available at Docker Hub. Once the Docker is installed and ready to use pull the **cdp-public-cloud-hol-provisioner:1.1** image by executing below command.
 
 
