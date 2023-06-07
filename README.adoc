@@ -105,3 +105,12 @@ The docker image is available at Docker Hub. Once the Docker is installed and re
 docker pull pjoshi06/cdp-public-cloud-hol-provisioner:1.1
 
 ----
+
+---
+
+=== Step 4: Define Configuration Values For Stack:
+This docker based provisioner requires values of mandatory parameters to provision the infrastructure. It reads the values of these parameters from a configuration file hosted on your local machine. This section walks you through all the steps which are required to create a configuration file. This is the most **important** part so please dont skip any
+step of this section.
+
+
+---
