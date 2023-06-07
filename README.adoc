@@ -38,9 +38,28 @@ For using this user should have:
 3. Programatic Access(AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY) of the AWS account with Administrator or Power User Role
 
 ## How To Use:
+==== Step 1: Generate Keys
+### CDP:
+* On the CDP Portal, click at the left bottom corner and click on Profile as shown below. 
+
+image::profile.png[profile,180,200]
+
+image::profile_1.png[profile1,290,220]
+
+* Click on Generate Access Key as shown below. 
+
+image::gen_access_key.png[access_key,900,200]
+
+* Copy the values of Access Key ID and Secret Key separately and keep it in a note. 
+
+image::gen_access_key_1.png[access_key1,450,300]
+==== Step 2: AWS SSH Key Pair
+==== Step 3: Get the docker image.
 The docker image is available at Docker Hub. Once the Docker is installed and ready to use pull the **cdp-public-cloud-hol-provisioner:1.1** image by executing below command.
 
+
 [.shell]
----
+----
 docker pull pjoshi06/cdp-public-cloud-hol-provisioner:1.1
----
+
+----
