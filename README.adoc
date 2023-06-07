@@ -42,9 +42,9 @@ For using this user should have:
 ### CDP:
 * On the CDP Portal, click at the left bottom corner and click on Profile as shown below. 
 
-image::profile.png[profile,180,200]
+image::images/profile.png[profile,180,200]
 
-image::profile_1.png[profile1,290,220]
+image::images/profile_1.png[profile1,290,220]
 
 * Click on Generate Access Key as shown below. 
 
