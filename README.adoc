@@ -85,7 +85,7 @@ To download the key pair, choose Download .csv file. Store the .csv file with ke
 
 4. For Name, enter a descriptive name for the key pair. It can’t include leading or trailing spaces.
 
-5. For Key pair type, choose either RSA.
+5. For Key pair type, choose RSA.
 
 6. For Private key file format, choose the pem format.
 
