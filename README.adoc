@@ -195,7 +195,7 @@ Place the **AWS_KEY_PAIR.pem** file downloaded in **Step 2** inside userconfig f
 === Step 5: Start Provisioning Stack:
 Once the configfile is created as outlined in Step 4 . The provisioning of infrastructure in interactive mode can be started by executing below command.
 
-For Mac Users:
+**For Mac Users:**
 
 [.shell]
 ----
@@ -206,7 +206,7 @@ provision
 
 ----
 
-For Windows Users:
+**For Windows Users:**
 ----
 docker run -it \
 -v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
@@ -214,18 +214,23 @@ pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
 provision
 
 ----
+
 [NOTE]
-The above commands will start the docker container in interactive mode and will display the process output and messages on the terminal. Make sure you don't close the terminal or
-your machine does not go to into sleep mode because of inactivity. If you wan to run the container in background/detach mode then replace the '-it' flag in above commands
-with '-d'(without quotes). You can check the logs of container by below command
+The above commands will start the docker container in interactive mode and will display the process output
+and messages on the terminal. Make sure you don't close the terminal or
+your machine does not go to into sleep mode because of inactivity. 
+If you wan to run the container in background/detach mode then replace the '-it' flag in above commands
+with '-d'(without quotes). You can check the logs of container by below commands
+
+To get the container ID or Name:
 [.shell]
 ----
-To get the container ID or Name:
+docker ps
 
-docker ps 
-
+----
 To get the logs:
-
+[.shell]
+----
 docker logs <CONTINER_ID> OR <CONTAINER_NAME>
 
 ----
