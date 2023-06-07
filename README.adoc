@@ -193,5 +193,27 @@ Place the **AWS_KEY_PAIR.pem** file downloaded in **Step 2** inside userconfig f
 
 ---
 === Step 5: Start Provisioning Stack:
+Once the configfile is created as outlined in Step 4 . The provisioning of infrastructure can be started by executing below command.
 
+For Mac Users:
+
+[.shell]
+----
+docker run -it \
+-v <LOCAL_PATH_OF_CONFIG_FOLDER>:/userconfig \
+pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+provision
+
+----
+
+For Windows Users:
+----
+----
+docker run -it \
+-v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
+pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+provision
+
+----
+----
 ---
