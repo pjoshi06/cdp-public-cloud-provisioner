@@ -134,7 +134,58 @@ C:\Users\Puneet Joshi\userconfig
 Download the  **configuration/configfile** and place it inside the above created directory. Make sure you dont add any file extension to it. (.txt,.doc).
 
 ==== C): 
-Start editing the **configfile** with the help of editor of your choice. Don't add any 'new line' after the last entry in the file. Refer to below table for defining
+Start editing the **configfile** with the help of editor of your choice. **Don't add any quotes(single or double) in values and no 'new line' after the last entry in the file.** Refer to below table for defining
 values of the parameters.
 
+[%header,cols="1,1,1"]
+|===
+|Parameter
+|Description
+|Remarks
+
+|KEYCLOAK_SERVER_NAME
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|AWS_ACCESS_KEY_ID
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|AWS_SECRET_ACCESS_KEY
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|AWS_REGION
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|AWS_KEY_PAIR
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|CDP_ACCESS_KEY_ID
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|CDP_PRIVATE_KEY
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|WORKSHOP_NAME
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|NUMBER_OF_WORKSHOP_USERS
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|WORKSHOP_USER_PREFIX
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|WORKSHOP_USER_DEFAULT_PASSWORD
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|CDP_DEPLOYMENT_TYPE
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|LOCAL_MACHINE_IP
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|KEYCLOAK_SECURITY_GROUP_NAME
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+
+
+|===
 ---
