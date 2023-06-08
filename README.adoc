@@ -254,6 +254,10 @@ This file contains details about the provisioned Keycloak Server and the SSO URL
 
 image::images/out_put_kc.png[during_process,650,300]
 
+And the login page for participants will be
+
+image::images/keycloak_login.png[kycloak_login,650,300]
+
 ==== CDP:
 [%header,cols="1,1"]
 |===
