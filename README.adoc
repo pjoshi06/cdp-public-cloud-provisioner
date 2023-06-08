@@ -39,7 +39,9 @@ For using this user should have:
 3. Programatic Access(AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY) of the AWS account with Administrator or Power User Role
 
 == How To Use
+
 === Step 1: Generate Keys
+
 ==== CDP
 * On the CDP Portal, click at the left bottom corner and click on Profile as shown below. 
 
