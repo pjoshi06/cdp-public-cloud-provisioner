@@ -2,9 +2,11 @@
 
 Author: **Puneet Joshi**
 
+:toc:
 
 
-## Overview:
+
+== Overview:
 
 Hands-on Labs play a crucial role in showcasing the capabilities of Cloudera Data Platform Public Cloud form factor to partners and customers. They offer a practical and immersive learning experience that goes beyond mere overview. Hands-on Labs facilitate participant engagement and allow them to explore and interact with different PaaS offerings of Cloudera Data Platform.
 
