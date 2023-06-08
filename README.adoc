@@ -99,7 +99,7 @@ To download the key pair, choose Download .csv file. Store the .csv file with ke
 The private key file is automatically downloaded by your browser. The base file name is the name that you specified as the name of your key pair, and the file name extension is determined by the file format that you chose. Save the private key file in a safe place.
 
 ---
-=== Step 3: Get the docker image.
+=== Step 3: Get the Docker Image.
 The docker image is available at Docker Hub. Once the Docker is installed and ready to use pull the **cdp-public-cloud-hol-provisioner:1.1** image by executing below command.
 
 
