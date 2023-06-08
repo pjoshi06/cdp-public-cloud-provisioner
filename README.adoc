@@ -2,7 +2,7 @@
 
 Author: **Puneet Joshi**
 
-:toc:
+toc::[]
 
 
 
