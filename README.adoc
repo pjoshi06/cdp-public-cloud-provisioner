@@ -1,10 +1,11 @@
 = CDP Public Cloud: Hands On Labs Infrastructure Provisioner
+:toc:
 
 Author: **Puneet Joshi**
 
-:toc:
 
-== Overview:
+
+== Overview
 
 Hands-on Labs play a crucial role in showcasing the capabilities of Cloudera Data Platform Public Cloud form factor to partners and customers. They offer a practical and immersive learning experience that goes beyond mere overview. Hands-on Labs facilitate participant engagement and allow them to explore and interact with different PaaS offerings of Cloudera Data Platform.
 
@@ -14,7 +15,7 @@ Infrastructure components are important and play a vital role in acheieving the 
 **Hands On Labs Infrastructure Provisioner** is a container based solution which takes care of provisioning the required infrastaructure components without much manual efforts. It creates a **disposable** on-demand stack consists of CDP Environment, Keycloak Server & Users by executing a **single** command.
 
 
-## Technology Stack:
+== Technology Stack
 **Hands On Labs Infrastructure Provisioner** employs a robust toolchain consisting of:
 
 
@@ -29,7 +30,7 @@ Infrastructure components are important and play a vital role in acheieving the 
 
 All the above tools are integrated with each other and packaged as a Dokcer Container for use.
 
-## Prerequisites:
+== Prerequisites
 The ready to use container takes care of all the dependencies of required tools & does not require user to install or configure any of the above listed tools. 
 For using this user should have:
 
@@ -37,9 +38,9 @@ For using this user should have:
 2. Programatic Access(CDP_ACCESS_KEY_ID & CDP_PRIVATE_KEY) of CDP Tenant
 3. Programatic Access(AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY) of the AWS account with Administrator or Power User Role
 
-## How To Use:
+== How To Use
 === Step 1: Generate Keys
-#### CDP:
+==== CDP
 * On the CDP Portal, click at the left bottom corner and click on Profile as shown below. 
 
 image::images/profile.png[profile,180,200]
@@ -54,7 +55,7 @@ image::images/gen_access_key.png[access_key,900,200]
 
 image::images/gen_access_key_1.png[access_key1,450,300]
 
-#### AWS
+==== AWS
 1. Open the IAM console at https://console.aws.amazon.com/iam/.
 
 2. On the navigation menu, choose Users.
