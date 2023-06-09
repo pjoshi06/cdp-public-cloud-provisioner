@@ -14,7 +14,7 @@ Email: **puneetjoshi@cloudera.com**
 
 
 
-image::images/keycloak_login.png[kycloak_login,900,400]
+image::images/keycloak_login.png[kycloak_login,1000,400]
 
 == Overview
 
