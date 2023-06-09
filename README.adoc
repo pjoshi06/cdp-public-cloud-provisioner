@@ -1,7 +1,18 @@
 = CDP Public Cloud: Hands On Labs Infrastructure Provisioner
 :toc:
 
-Author: **Puneet Joshi**
+Author: **Puneett Joshi**
+
+Email: **puneetjoshi@cloudera.com**
+
+
+
+
+---
+
+
+
+
 
 image::images/keycloak_login.png[kycloak_login,900,400]
 
