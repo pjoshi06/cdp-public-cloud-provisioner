@@ -23,7 +23,15 @@ Hands-on Labs play a crucial role in showcasing the capabilities of Cloudera Dat
 
 Infrastructure components are important and play a vital role in acheieving the goal of Hands-on Labs and to give a better experience to the participants.
 
-**Hands On Labs Infrastructure Provisioner** is a container based solution which takes care of provisioning the required infrastaructure components without much manual efforts. It creates a **disposable** on-demand stack consists of CDP Environment, Keycloak Server & Users by executing a **single** command.
+**Hands On Labs Infrastructure Provisioner** is a container based solution which takes care of provisioning the required infrastaructure components without much manual efforts. By executing a single command it creates a **disposable** on-demand stack consists of:
+
+1. CDP Environment
+2. Datalake
+3. Data Service (Currently CDW)
+4. Keycloak Server
+5. Users 
+
+
 
 
 == Technology Stack
@@ -116,7 +124,7 @@ The docker image is available at Docker Hub. Once the Docker is installed and re
 
 [.shell]
 ----
-docker pull pjoshi06/cdp-public-cloud-hol-provisioner:1.1
+docker pull pjoshi06/cdp-public-cloud-hol-provisioner:latest
 
 ----
 
@@ -199,6 +207,9 @@ values of the parameters.
 |KEYCLOAK_SECURITY_GROUP_NAME
 |Name of security group for keycloak EC2 instance
 |No quotes
+|ENABLE_CDW
+|To enable CDW Data service with Hive & Impala warehouses
+|Only Yes or No without quotes
 
 
 |===
@@ -215,7 +226,7 @@ Once the configfile is created as outlined in Step 4 . The provisioning of infra
 ----
 docker run -it \
 -v <LOCAL_PATH_OF_CONFIG_FOLDER>:/userconfig \
-pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+pjoshi06/cdp-public-cloud-hol-provisioner:latest \
 provision
 
 ----
@@ -225,7 +236,7 @@ provision
 ----
 docker run -it \
 -v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
-pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+pjoshi06/cdp-public-cloud-hol-provisioner:latest \
 provision
 
 ----
@@ -250,10 +261,9 @@ docker logs <CONTINER_ID> OR <CONTAINER_NAME>
 
 ----
 
-The overall time for provisioning is nearly 30-35 minutes. During the execution either on terminal or in docker logs you will find below message appearing frequently.
-This is expected as some processes are running in asychronous mode. You can safely ignore the messages.
+The overall time for provisioning is nearly 30-35 minutes. 
 
-image::images/during_process.png[during_process,650,300]
+
 ---
 
 === The Outcome
@@ -268,7 +278,7 @@ image::images/out_put_kc.png[during_process,650,300]
 
 
 
-==== CDP:
+==== CDP Environment & Datalake:
 [%header,cols="1,1"]
 |===
 |Type
@@ -283,6 +293,33 @@ image::images/out_put_kc.png[during_process,650,300]
 
 |User Group
 |<WORKSHOP_NAME>-cdp-user-group; e.g: accn-workshp-cdp-user-group
+
+|===
+
+==== CDW
+
+Based on number of workshop users defined in configfile the provisioner will take care of deploying required number of **xsmall** warehouses of both Hive & Impala and a
+data visualization cluster of **large** size.
+[%header,cols="1,1"]
+|===
+|Type
+|Name
+
+
+|Activated CDW Environment
+|<WORKSHOP_NAME>-cdp-env; e.g : accn-workshp-cdp-env
+
+|Database Catalog
+|
+
+|Hive Warehouses(xsmall)
+|<WORKSHOP_NAME>-hive-<number>; e.g: accn-workshp-hive-01
+
+|Impala Warehouses(xsmall)
+|<WORKSHOP_NAME>-impala-<number>; e.g: accn-workshp-hive-01
+
+|Data Visualization(large)
+|<WORKSHOP_NAME>-data-viz; e.g: accn-workshp-data-viz
 
 |===
 The provisioned CDP environment will have all the Keycloak users created in CDP and assigned to the *-cdp-user-group and synched to FreeIpa.
