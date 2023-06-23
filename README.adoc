@@ -276,7 +276,7 @@ This file contains details about the provisioned Keycloak Server and the SSO URL
 image::images/out_put_kc.png[during_process,650,300]
 
 
-
+---
 
 ==== CDP Environment & Datalake:
 [%header,cols="1,1"]
@@ -295,6 +295,8 @@ image::images/out_put_kc.png[during_process,650,300]
 |<WORKSHOP_NAME>-cdp-user-group; e.g: accn-workshp-cdp-user-group
 
 |===
+
+---
 
 ==== CDW
 
@@ -322,6 +324,8 @@ data visualization cluster of **large** size.
 |<WORKSHOP_NAME>-data-viz; e.g: accn-workshp-data-viz
 
 |===
+
+---
 The provisioned CDP environment will have all the Keycloak users created in CDP and assigned to the *-cdp-user-group and synched to FreeIpa.
 
 [NOTE]
@@ -331,7 +335,17 @@ files and folder as these are required for destroying the stack.
 ---
 
 === Destroy
-After succesful delivery of your HOL/Workshop the complete stack can be destroyed using one single command as below.
+After succesful delivery of your HOL/Workshop the complete stack can be destroyed using one single command as below. The **destroy** operation will take care of deleting/removing
+all of the below:
+
+1. Data Visualization Cluster
+2. Hive & Impala Warehouses
+3. Deactivation of CDW Cluster
+4. CDP Environment & Data Lake
+5. Users
+6. Keycloak Server
+
+
 
 **For Mac Users:**
 
@@ -339,7 +353,7 @@ After succesful delivery of your HOL/Workshop the complete stack can be destroye
 ----
 docker run -it \
 -v <LOCAL_PATH_OF_CONFIG_FOLDER>:/userconfig \
-pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+pjoshi06/cdp-public-cloud-hol-provisioner:latest \
 destroy
 
 ----
@@ -349,7 +363,7 @@ destroy
 ----
 docker run -it \
 -v "<LOCAL_PATH_OF_CONFIG_FOLDER>":/userconfig \
-pjoshi06/cdp-public-cloud-hol-provisioner:1.1 \
+pjoshi06/cdp-public-cloud-hol-provisioner:latest \
 destroy
 
 ----
