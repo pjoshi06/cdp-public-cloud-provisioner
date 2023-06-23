@@ -318,7 +318,7 @@ data visualization cluster of **large** size.
 |<WORKSHOP_NAME>-hive-<number>; e.g: accn-workshp-hive-01
 
 |Impala Warehouses(xsmall)
-|<WORKSHOP_NAME>-impala-<number>; e.g: accn-workshp-hive-01
+|<WORKSHOP_NAME>-impala-<number>; e.g: accn-workshp-impala-01
 
 |Data Visualization(large)
 |<WORKSHOP_NAME>-data-viz; e.g: accn-workshp-data-viz
