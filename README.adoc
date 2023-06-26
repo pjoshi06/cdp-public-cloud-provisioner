@@ -119,7 +119,7 @@ The private key file is automatically downloaded by your browser. The base file 
 
 ---
 === Step 3: Get the Docker Image.
-The docker image is available at Docker Hub. Once the Docker is installed and ready to use pull the **cdp-public-cloud-hol-provisioner:1.1** image by executing below command.
+The docker image is available at Docker Hub. Once the Docker is installed and ready to use pull the **cdp-public-cloud-hol-provisioner:latest** image by executing below command.
 
 
 [.shell]
