@@ -27,7 +27,7 @@ Infrastructure components are important and play a vital role in acheieving the 
 
 1. CDP Environment
 2. Datalake
-3. Data Service (Currently CDW)
+3. Data Service (Currently CDW & CDE)
 4. Keycloak Server
 5. Users 
 
@@ -207,9 +207,13 @@ values of the parameters.
 |KEYCLOAK_SECURITY_GROUP_NAME
 |Name of security group for keycloak EC2 instance
 |No quotes
-|ENABLE_CDW
-|To enable CDW Data service with Hive & Impala warehouses
-|Only Yes or No without quotes
+|ENABLE_DATA_SERVICES
+|A comma seprated list of Data services to enable.
+|**[NONE]** if no data services required
+
+**[CDW]** if only CDW is required.
+
+ **[CDW,CDE]** if both are required.
 
 
 |===
@@ -326,6 +330,26 @@ data visualization cluster of **large** size.
 |===
 
 ---
+
+==== CDE
+Based on number of workshop users defined in configfile the provisioner will take care of activating CDE service and deploying required number of CDE Virtual clusters having **SPARK 2** configuration. Based on the scope of workshop the owner needs to grant access through Ranger manually.
+[%header,cols="1,1"]
+|===
+|Type
+|Name
+
+|Activated CDE Service
+|<WORKSHOP_NAME>-cde; e.g : accn-workshp-cde
+
+
+|Virtual Clusters)
+|<WORKSHOP_NAME>-cde-vc-<number>; e.g: accn-workshp-cde-vc-01
+
+
+|===
+
+---
+
 The provisioned CDP environment will have all the Keycloak users created in CDP and assigned to the *-cdp-user-group and synched to FreeIpa.
 
 [NOTE]
@@ -336,14 +360,16 @@ files and folder as these are required for destroying the stack.
 
 === Destroy
 After succesful delivery of your HOL/Workshop the complete stack can be destroyed using one single command as below. The **destroy** operation will take care of deleting/removing
-all of the below:
+all of the below(if both CDW & CDE are deployed): 
 
 1. Data Visualization Cluster
 2. Hive & Impala Warehouses
 3. Deactivation of CDW Cluster
-4. CDP Environment & Data Lake
-5. Users
-6. Keycloak Server
+4. CDE Virtual Cluster
+5. Deactivation of CDE Service
+6. CDP Environment & Data Lake
+7. Users
+8. Keycloak Server
 
 
 
