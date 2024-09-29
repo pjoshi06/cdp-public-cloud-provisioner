@@ -1,0 +1,39 @@
+---
+# Create Keycloak SAML Client
+- name: Create Keycloak SAML Client
+  community.general.keycloak_client:
+    # Auth
+    auth_client_id: "{{ keycloak__auth_client_id }}"
+    auth_keycloak_url: "{{ keycloak__domain }}"
+    validate_certs: no
+    auth_realm: "{{ keycloak__auth_realm }}"
+    auth_username: "{{ keycloak__admin_username }}"
+    auth_password: "{{ keycloak__admin_password }}"
+    # Client details
+    realm: "{{ keycloak__realm }}"
+    client_id: "{{ keycloak__client_id }}"
+    state: present
+    enabled: True
+    # Details of client
+    name: "{{ keycloak__client_id }}"
+    description: "{{ keycloak__client_description }}"
+    client_authenticator_type: "{{ keycloak__client_authenticator_type }}"
+    # secret: REALLYWELLKEPTSECRET # Will be auto-generated
+    redirect_uris: "{{ keycloak__client_redirect_uris }}"
+    web_origins: "{{ keycloak__client_web_origins }}"
+    not_before: "{{ keycloak__client_not_before }}"
+    bearer_only: "{{ keycloak__client_bearer_only }}"
+    consent_required: "{{ keycloak__client_consent_required }}"
+    standard_flow_enabled: "{{ keycloak__client_standard_flow_enabled }}"
+    implicit_flow_enabled: "{{ keycloak__client_implicit_flow_enabled }}"
+    direct_access_grants_enabled: "{{ keycloak__client_direct_access_grants_enabled }}"
+    service_accounts_enabled: "{{ keycloak__client_service_accounts_enabled }}"
+    public_client: "{{ keycloak__client_public_client }}"
+    frontchannel_logout: "{{ keycloak__client_frontchannel_logout }}"
+    protocol: "{{ keycloak__client_protocol }}"
+    full_scope_allowed: "{{ keycloak__client_full_scope_allowed }}"
+    node_re_registration_timeout: "{{ keycloak__client_node_re_registration_timeout }}"
+    surrogate_auth_required: "{{ keycloak__client_surrogate_auth_required }}"
+    authentication_flow_binding_overrides: "{{ keycloak__client_authentication_flow_binding_overrides }}"
+    attributes: "{{ keycloak__client_attributes }}"
+    protocol_mappers: "{{ keycloak__client_protocol_mappers }}"

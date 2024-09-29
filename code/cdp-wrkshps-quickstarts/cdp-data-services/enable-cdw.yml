@@ -1,0 +1,58 @@
+---
+- name: enable cdw data service
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: activating CDW cluster
+      cloudera.cloud.dw_cluster:
+        env: "{{ cdp_env_name }}"
+        state: present
+        aws_public_subnets: "{{ env_public_subnet }}"
+        aws_private_subnets: "{{ env_private_subnet }}"
+        wait: False
+      register: dwcluster
+      until: dwcluster['cluster']['status'] == "Running"
+      retries: 50
+      delay: 30
+
+    - name: waiting for  default database catalog to be running
+      cloudera.cloud.dw_database_catalog_info:
+        cluster_id: "{{ dwcluster['cluster']['id'] }}"
+      register: dbcatalogstatus
+      until: dbcatalogstatus['database_catalogs'][0]['status'] == "Running"
+      retries: 50
+      delay: 30
+
+    - name: deploying hive virtual warehouse
+      ansible.builtin.command: >
+        cdp dw create-vw \
+        --cluster-id "{{ dwcluster['cluster']['id'] }}" \
+        --dbc-id "{{ dbcatalogstatus['database_catalogs'][0]['id'] }}"
+        --vw-type "{{ 'hive' }}" \
+        --name "{{ workshop_name }}-hive-{{ item }}" \
+        --autoscaling disableAutoSuspend="{{ true }}"
+      with_sequence: start=1 end="{{ number_vw_to_create | default(1) }}" format=%02d
+      loop_control:
+        pause: 30
+
+    - name: deploying impala virtual warehouse
+      ansible.builtin.command: >
+        cdp dw create-vw \
+        --cluster-id "{{ dwcluster['cluster']['id'] }}" \
+        --dbc-id "{{ dbcatalogstatus['database_catalogs'][0]['id'] }}" \
+        --vw-type "{{ 'impala' }}" \
+        --name "{{ workshop_name }}-impala-{{ item }}" \
+        --impala-ha-settings highAvailabilityMode="{{ 'DISABLED'}}" \
+        --autoscaling disableAutoSuspend="{{ true }}"
+      with_sequence: start=1 end="{{ number_vw_to_create | default(1) }}" format=%02d
+      loop_control:
+        pause: 30
+
+    - name: deploying data visualization cluster
+      ansible.builtin.command: >
+        cdp dw create-data-visualization \
+        --cluster-id "{{ dwcluster['cluster']['id'] }}" \
+        --name "{{ workshop_name }}-data-viz" \
+        --config adminGroups="{{ workshop_name }}-cdp-user-group" \
+        --template-name "{{ 'large-viz' }}"

@@ -1,0 +1,47 @@
+---
+- name: disable cde data service
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: list cde virtual clusters
+      cloudera.cloud.de_virtual_cluster_info:
+        cluster_name: "{{ workshop_name }}-cde"
+        environment: "{{ workshop_name }}-cdp-env"
+      register: virtualclusters
+
+    - name: extract the virtual clusters id
+      ansible.builtin.set_fact:
+        vc_ids: "{{ virtualclusters['vcs'] | community.general.json_query(query_string) | default([]) }}"
+      vars:
+        query_string: "[].{vcId:vcId,clusterId:clusterId}"
+
+    - name: print vc_ids
+      debug:
+        msg: "{{ vc_ids }}"
+
+    - name: delete cde virtual clusters
+      ansible.builtin.command: >
+        cdp de delete-vc \
+        --cluster-id "{{ item.clusterId }}" \
+        --vc-id "{{ item.vcId}}"
+      loop: "{{ vc_ids }}"
+
+    - name: deactivate cde service
+      cloudera.cloud.de:
+        name: "{{ workshop_name }}-cde"
+        env: "{{ workshop_name }}-cdp-env"
+        state: absent
+
+    - name: check status of cde service
+      cloudera.cloud.de_info:
+        name: "{{ workshop_name }}-cde"
+        env: "{{ workshop_name }}-cdp-env"
+      register: serstatus
+      until: serstatus['services'] | length == 0
+      retries: 50
+      delay: 30
+
+    - name: print
+      debug:
+        msg: "{{ serstatus }}"

@@ -1,0 +1,41 @@
+---
+- name: enable cde data service
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tasks:
+    - name: activate cde service
+      cloudera.cloud.de:
+        name: "{{ workshop_name }}-cde"
+        env: "{{ cdp_env_name }}"
+        instance_type: "m5.2xlarge"
+        minimum_instances: 10
+        maximum_instances: 40
+        initial_instances: 10
+        enable_public_endpoint: true
+        state: present
+        wait: no
+      register: deservice
+    - name: check the cde service status
+      cloudera.cloud.de_info:
+        name: "{{ workshop_name }}-cde"
+      register: deservicestatus
+      until: deservicestatus['services'][0]['status'] == "ClusterCreationCompleted"
+      retries: 35
+      delay: 120
+
+    - name: print the status
+      debug:
+        msg: "{{ deservicestatus }}"
+
+    - name: deploy cde virtual clusters
+      ansible.builtin.command: >
+        cdp de create-vc \
+        --name "{{ workshop_name }}-cde-vc-{{ item }}" \
+        --cluster-id "{{ deservicestatus['services'][0]['clusterId'] }}" \
+        --spark-version "{{ 'SPARK2'}}" \
+        --cpu-requests "{{ '20' }}" \
+        --memory-requests "{{ '80Gi' }}"
+      with_sequence: start=1 end="{{ number_vc_to_create | default(1) }}" format=%02d
+      loop_control:
+        pause: 30
